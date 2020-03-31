@@ -1,0 +1,57 @@
+PUT microbiology_test
+{
+  "mappings": {
+    "doc": {
+      "dynamic": "true",
+      "properties": {
+        "section_title": {
+          "type": "text",
+          "index": true,
+          "analyzer": "my_analyzer",
+          "search_analyzer": "my_analyzer"  
+         
+        },
+          "sub_section_title": {
+          "type": "text",
+           "index": true,
+          "analyzer": "my_analyzer",
+          "search_analyzer": "my_analyzer"  
+        },
+          "sub_section_id": {
+          "type": "integer"
+        },
+         "sub_section_display_id": {
+          "type": "double"
+        },
+        "section_display_id": {
+          "type": "integer"
+        },
+          "sub_section_text": {
+          "type": "text",
+           "index": true,
+          "analyzer": "my_analyzer",
+          "search_analyzer": "my_analyzer"    
+        },
+        "sub_section_display": {
+          "type": "text"
+        }
+      }
+    }
+  },
+  
+    "settings": {
+        "analysis": {
+            "analyzer": {
+                "my_analyzer": {
+                     "tokenizer": "standard",
+                    "filter": ["standard", "lowercase", "stop", "porter_stem"]
+                }            }
+          
+      }
+             } 
+  
+} 
+
+
+
+
